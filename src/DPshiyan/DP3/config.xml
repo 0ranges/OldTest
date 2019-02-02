@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config>
+    <abstractFacade>DPshiyan.DP3.XMLFacade</abstractFacade>
+    <abstractLog>DPshiyan.DP3.ProxyLog</abstractLog>
+    <software>DPshiyan.DP3.Picture</software>
+    <abstractCommand>DPshiyan.DP3.FunCommand</abstractCommand>
+    <filter>DPshiyan.DP3.BlackWhiteFilter</filter>
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config>
+    <ShapeFactory>DPshiyan.CircleFactory</ShapeFactory>
+    <RoleFactory>hero</RoleFactory>
+    <ReaderFactory>DPshiyan.JpgReaderFactory</ReaderFactory>
+    <DatabaseFactory>DPshiyan.MysqlDatabaseFactory</DatabaseFactory>
+</config>
