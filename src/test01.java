@@ -9,36 +9,96 @@ import java.util.Scanner;
  * Created by user on 2018/8/1.
  */
 public class test01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception  {
 
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        int m = input.nextInt();
-        List<List<Integer>> lists = new ArrayList<>();
-        for(int i = 0;i < n;i++){
-            lists.add(new ArrayList<>());
-        }
-        for(int i = 0;i < m;i++){
-            int a = input.nextInt();
-            int b = input.nextInt();
-            lists.get(a-1).add(b-1);
-        }
-        boolean[] stage = new boolean[n];
-        int result = 0;
-        for(int i = 0;i < n;i++){
-            if(!stage[i]){
-                search(i,stage,lists);
-                result++;
+//        String s1 = "Programming";
+//        String s2 = new String("Programming");
+//        String s3 = "Program";
+//        String s4 = "ming";
+//        String s5 = "Program" + "ming";
+//        String s6 = s3 + s4;
+//        System.out.println(s1 == s2);
+//        System.out.println(s1 == s5);
+//        System.out.println(s1 == s6);
+//        System.out.println(s1 == s6.intern());
+//        System.out.println(s2 == s2.intern());
+//        swap(new Test(2),new Test(2));
+
+//        father father = new father();
+//        System.out.println("123");
+//        son son = new son();
+//        System.out.println("123");
+//        son son1 = new son();
+//
+//        test01.C c = new test01().new C();
+//        test01.C1 c1 = new test01.C1();
+
+//        System.out.println(39 ^ 39);
+        try {
+            try {
+                throw new Sneeze();
+            } catch (Annoyance a) {
+                System.out.println("Caught Annoyance");
+                throw a;
             }
+        } catch (Sneeze s) {
+            System.out.println("Caught Sneeze");
+            return;
+        } finally {
+            System.out.println("Hello World!");
         }
-        System.out.println(result);
     }
-    private static void search(int i,boolean[] stage,List<List<Integer>> lists){
-        for(int k : lists.get(i)){
-            if(!stage[k]){
-                stage[k] = true;
-                search(k,stage,lists);
-            }
-        }
+
+    class C{}
+    static class C1{}
+    public static void swap(Test a){
+        return ;
+    }
+
+    public static int swap(Test a,Test b) {
+        Test temp = a;
+        a = b;
+        b = temp;
+        return 0;
+    }
+
+}
+class Annoyance extends Exception {}
+class Sneeze extends Annoyance {}
+interface A{
+    void swap();
+    int a = 1;
+}
+
+class B implements A{
+
+    @Override
+    public void swap() {
+    }
+}
+class Test{
+    public Test(int a){
+        this.a = a;
+    }
+    int a;
+}
+class father{
+    static {
+        System.out.println(1);
+    }
+    public father(){
+        System.out.println(2);
+    }
+    public father(int i){
+        System.out.println(i);
+    }
+}
+class son extends father {
+    static {
+        System.out.println(3);
+    }
+    public son() {
+        super(5);
+        System.out.println(4);
     }
 }
